@@ -1,11 +1,11 @@
 <template>
   <button type="button" class="btn btn-light btn-sm" @click="goBack">后退</button>
-  <h4 class="text-center">用户详情 --- {{id}}</h4>
+  <h4 class="text-center">秒杀 --- {{id}}</h4>
 </template>
 
 <script>
 export default {
-  name: 'MyUserDetail',
+  name: 'MyKill',
   props: ['id'],
   methods: {
     goBack() {

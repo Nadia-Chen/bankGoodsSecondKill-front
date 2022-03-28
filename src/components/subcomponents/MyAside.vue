@@ -3,19 +3,16 @@
     <!-- 左侧边栏列表 -->
     <ul class="user-select-none menu">
       <li class="menu-item">
-        <router-link to="/home/users">用户管理</router-link>
+        <router-link to="/home/main">主页面</router-link>
       </li>
       <li class="menu-item">
-        <router-link to="/home/rights">权限管理</router-link>
+        <router-link to="/home/goods">订单信息</router-link>
       </li>
       <li class="menu-item">
-        <router-link to="/home/goods">商品管理</router-link>
+        <router-link to="/home/client">用户信息</router-link>
       </li>
       <li class="menu-item">
-        <router-link to="/home/orders">订单管理</router-link>
-      </li>
-      <li class="menu-item">
-        <router-link to="/home/settings">系统设置</router-link>
+        <router-link to="/home/company">公司介绍</router-link>
       </li>
     </ul>
   </div>
