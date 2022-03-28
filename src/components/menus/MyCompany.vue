@@ -1,5 +1,5 @@
 <template>
-  <h4 class="text-center">公司介绍</h4>
+  <h4 class="text-center">银行介绍</h4>
 </template>
 
 <script>
