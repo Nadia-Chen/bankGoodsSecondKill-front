@@ -26,7 +26,7 @@ export default {
 
 <style lang="less" scoped>
 .layout-aside-container {
-  width: 250px;
+  width: 20%;
   height: 100%;
   border-right: 1px solid #eaeaea;
 }
