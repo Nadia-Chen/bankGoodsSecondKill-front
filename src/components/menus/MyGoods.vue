@@ -13,6 +13,12 @@
 <script>
 export default {
   name: 'MyGoods',
+  // data() {
+  //   return {
+
+  //   }
+  // },
+
   methods: {
     onShowall(){
       console.log("全部");

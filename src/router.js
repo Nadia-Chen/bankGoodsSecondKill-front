@@ -8,6 +8,7 @@ import Goods from './components/menus/MyGoods.vue'
 import Client from './components/menus/MyClient.vue'
 import Company from './components/menus/MyCompany.vue'
 import Kill from './components/kill/MyKill.vue'
+import Logup from './components/MyLogup.vue'
 
 // 创建路由实例对象
 const router = createRouter({
@@ -15,6 +16,7 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login, name: 'login' },
+    { path: '/logup', component: Logup, name: 'logup' },
     {
       path: '/home',
       redirect: '/home/main',
@@ -34,14 +36,17 @@ const router = createRouter({
 // 全局路由导航守卫
 router.beforeEach((to, from, next) => {
   // 判断用户访问的是否为登录页
-  if (to.path === '/login') return next()
+  if (to.path === '/login' || to.path === '/logup') return next()
   // 获取 token 值
-  const tokenStr = localStorage.getItem('token')
-  if (!tokenStr) {
-    next('/login')
-  } else {
-    next()
+  else {
+    const tokenStr = localStorage.getItem('token')
+    if (!tokenStr) {
+      next('/login')
+    } else {
+      next()
+    }
   }
+
 })
 
 export default router

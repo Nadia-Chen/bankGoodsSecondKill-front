@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, i) in userlist" :key="item.id">
+      <tr v-for="(item, i) in goodslist" :key="item.id">
         <td>{{ i + 1 }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
@@ -37,8 +37,8 @@ export default {
   name: 'MyMain',
   data() {
     return {
-      // 用户列表数据
-      userlist: [
+      // 商品列表数据
+      goodslist: [
         { id: 1, name: '手机', price: 10000, description: '苹果🍎', num: 100, timecountdown: '10h'},
         { id: 2, name: '手机', price: 10000, description: '苹果🍎', num: 100, timecountdown: '10h'},
         { id: 3, name: '手机', price: 10000, description: '苹果🍎', num: 100, timecountdown: '10h'},
@@ -46,6 +46,18 @@ export default {
       ],
     }
   },
+  created(){
+    this.getGoodsList()
+  },
+  methods: {
+    //获取商品列表数据的方法
+    async getGoodsList(){
+      console.log("获取商品列表数据……");
+      // const { data: res } = await this.$http.get('/kill_information/getRandomUrl/{userId}/{killInformationId}')
+      // console.log(res);
+
+    },
+  }
 }
 </script>
 

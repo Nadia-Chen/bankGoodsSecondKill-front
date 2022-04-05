@@ -11,9 +11,6 @@
       <li class="menu-item">
         <router-link to="/home/client">用户信息</router-link>
       </li>
-      <li class="menu-item">
-        <router-link to="/home/company">银行介绍</router-link>
-      </li>
     </ul>
   </div>
 </template>
