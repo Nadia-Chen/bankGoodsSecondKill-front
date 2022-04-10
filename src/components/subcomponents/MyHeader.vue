@@ -5,7 +5,7 @@
       <!-- 如果需要logo -->
       <!-- <img class="layout-header-left-img" src="../../assets/heima.png" alt=""> -->
       <!-- 标题 -->
-      <h4 class="layout-header-left-title ml-3">银行秒杀系统</h4>
+      <h4 class="layout-header-left-title ml-3" style="color:black">银行秒杀系统</h4>
     </div>
 
     <!-- 右侧按钮区域 -->
@@ -31,6 +31,7 @@ export default {
 .layout-header-container {
   height: 60px;
   border-bottom: 1px solid #eaeaea;
+  background-color: 	rgb(91, 192, 222);
 }
 
 .layout-header-left-img {

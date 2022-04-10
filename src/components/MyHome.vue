@@ -47,6 +47,8 @@ export default {
     .home-main-body {
       padding: 15px;
       flex: 1;
+      position: absolute;
+      inset: 60px 0px 0px 20%;
     }
   }
 }

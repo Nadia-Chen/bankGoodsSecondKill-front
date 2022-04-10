@@ -1,7 +1,7 @@
 <template>
-  <div class="layout-aside-container">
+  <div class="layout-aside-container" style="background-color:rgb(91, 192, 222)">
     <!-- 左侧边栏列表 -->
-    <ul class="user-select-none menu">
+    <ul class="user-select-none menu" style="background-color:white">
       <li class="menu-item">
         <router-link to="/home/main">主页面</router-link>
       </li>
@@ -23,9 +23,12 @@ export default {
 
 <style lang="less" scoped>
 .layout-aside-container {
+  // width: 20%;
+  // height: 600px;
+  border-right: 1px solid #eaeaea;
   width: 20%;
   height: 100%;
-  border-right: 1px solid #eaeaea;
+  position: absolute;
 }
 
 .menu {
@@ -66,7 +69,7 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #42b983;
+    background-color: rgb(91, 192, 222);
   }
 }
 </style>
