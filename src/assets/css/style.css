@@ -134,7 +134,7 @@ html,body{
     color: #202e42;
     font-size: 30px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-family: "CircularStd-Book";
     text-transform: uppercase;
 }
@@ -170,7 +170,7 @@ html,body{
     font-family: "CircularStd-Book";
     font-weight: 500;
     text-transform: capitalize;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .signin-form input[type="text"],.signin-form input[type="email"],.signin-form input[type="password"]{
     color: #202e42;

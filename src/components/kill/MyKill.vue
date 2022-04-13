@@ -170,8 +170,20 @@ export default {
       console.log("获取发起人信息");
       const { data: res } = await this.$http.get('/sponsor/getKillDetails/'+ this.killID )
       console.log(res.data);
+      console.log(res.data.productInformation.name);
+      if(res.data.productInformation == null){
+        return;
+      }
+      else{
+        try {
+          this.price = res.data.productInformation.price
+          this.itemname = res.data.productInformation.name
+        } catch (error) {
+          console.log(error);
+        }
+      }
       
-      if(res.data == null){
+      if(res.data.sponsor == null){
         return;
       }
       else{
@@ -179,6 +191,7 @@ export default {
           this.sponsorID = res.data.sponsor.id
           this.sponsorName = res.data.sponsor.name
           this.sponsorDescription = res.data.sponsor.description
+          
         } catch (error) {
           console.log(error);
         }
