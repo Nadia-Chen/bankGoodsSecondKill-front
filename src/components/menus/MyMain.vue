@@ -45,9 +45,9 @@ export default {
       // 商品列表默认数据
       goodslist: [
         { id: 1, description: 'null', surplusNum: 'null', state: 'null', start: 'null', end: 'null'},
-        { id: 2, description: 'null', surplusNum: 'null', state: 'null', start: 'null', end: 'null'},
-        { id: 3, description: 'null', surplusNum: 'null', state: 'null', start: 'null', end: 'null'},
-        { id: 4, description: 'null', surplusNum: 'null', state: 'null', start: 'null', end: 'null'},
+        { id: 2, description: '手机', surplusNum: '10000', state: '未开始', start: '2022-05-01', end: '2022-06-01'},
+        { id: 3, description: '电脑', surplusNum: '10000', state: '未开始', start: '2022-06-01', end: '2022-07-01'},
+        { id: 4, description: '耳机', surplusNum: '9999', state: '未开始', start: '2022-07-01', end: '2022-08-01'},
       ],
       // 从localstorage里获取
       userId: '',

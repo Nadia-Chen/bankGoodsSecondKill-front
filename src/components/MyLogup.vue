@@ -271,8 +271,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 div.form-group{
 	margin-bottom: 5px;
+}
+.signin-form input{
+	  font-size: 16px;
+    text-transform: initial;
+    padding: 0px 18px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 </style>

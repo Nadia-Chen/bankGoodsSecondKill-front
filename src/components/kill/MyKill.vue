@@ -53,7 +53,7 @@
     </p>
     
     <div class="buttonpay">
-      <button type="button" class="btn btn-info" style="width: 100px; margin:39px 20px 20px;">确认支付</button>
+      <button type="button" class="btn btn-info" style="width: 100px; margin:39px 20px 20px;" @click="payComfirm">确认支付</button>
     </div>
       <div v-if="result">
         <p style="color:red; text-align: center;">{{resultmessage}}</p>
@@ -62,13 +62,22 @@
   </div>
 </div>
   <hr>
-
+<vue-basic-alert 
+    		   :duration="300" 
+    		   :closeIn="1800" 
+    		   ref="alert" />
 </template>
 
 <script>
+import qs from 'qs'
+import VueBasicAlert from 'vue-basic-alert'
+
 export default {
   name: 'MyKill',
   props: ['id'], // this.id
+  components:{
+		VueBasicAlert,
+	},
   data(){
     return{
       name: '',
@@ -86,13 +95,14 @@ export default {
       buyMaximum: '',
       state: '',
 
-      sponsorID: '',
-      sponsorName: '',
+      sponsorID: '1',
+      sponsorName: 'admin',
       sponsorDescription: '无',
 
       userID: '',
       killID: '',
 
+      flag: 0,
       pay:false,
       warning:false,
       result:false,
@@ -200,6 +210,7 @@ export default {
 
     // 立即下单
      async onPayClick(){
+      
       // 调用接口传参
       console.log('/kill_information/getRandomUrlWithoutAOP/'+this.userID+'/' + this.killID);
       const { data: res } = await this.$http.get('/kill_information/getRandomUrlWithoutAOP/'+this.userID+'/' + this.killID )
@@ -207,17 +218,45 @@ export default {
       // 返回res.data是一串字符串
       if(res.data == null) {
         this.warning = true;
-        this.message = res.message}
+        this.message = res.message
+        this.$refs.alert.showAlert(
+  			          'error', // There are 4 types of alert: success, info, warning, error
+  			          "请重新登录", // Size of the icon (px)
+  			          '下单失败', // Icon styles: now only 2 styles 'solid' and 'regular'
+  			          'Success 200', // Header of the alert
+  			          this.message // Message of the alert
+  			      );
+      }
       else{
         try {
           this.pay = true;
+          if(this.flag == 0){
+            this.$refs.alert.showAlert(
+  			          'success', // There are 4 types of alert: success, info, warning, error
+  			          "", // Size of the icon (px)
+  			          '下单成功', // Icon styles: now only 2 styles 'solid' and 'regular'
+  			          'Success 200', // Header of the alert
+  			          '' // Message of the alert
+  			      );
+            this.flag = 1;
+          }
+          else{
+              this.$refs.alert.showAlert(
+  			          'warning', // There are 4 types of alert: success, info, warning, error
+  			          "", // Size of the icon (px)
+  			          '重复请求', // Icon styles: now only 2 styles 'solid' and 'regular'
+  			          'Success 200', // Header of the alert
+  			          '' // Message of the alert
+  			      );
+          }
+          
           this.randomUrl = res.data;
           // console.log('/kill_information/users/'+ this.userID +'/kills/'+ this.killID +'/products/' + this.buyAmount + '/'+ this.randomUrl);
           const { data: get } = await this.$http.get('/kill_information/users/'+ this.userID +'/kills/'+ this.killID +'/products/' + this.buyAmount + '/'+ this.randomUrl )
           // console.log(get);
           if(get.code == 6666) return;
           else{
-            this.warning = true;
+            // this.warning = true;
             this.message = get.message;
             }
           } catch (error) {
@@ -229,6 +268,14 @@ export default {
     // 确认支付后扣除存款
     payComfirm(){
       console.log("确认支付");
+      // 支付成功
+      this.$refs.alert.showAlert(
+  		      'success', // There are 4 types of alert: success, info, warning, error
+  		      "", // Size of the icon (px)
+  		      '支付成功', // Icon styles: now only 2 styles 'solid' and 'regular'
+  		      'Success 200', // Header of the alert
+  		      "" // Message of the alert
+  		  );
       // post
       var url = "http://106.52.2.132:8888/order_information/pay/"+ this.userID + "/" + this.killID;
       var data = {email: this.email , password: this.password}
@@ -252,6 +299,7 @@ export default {
                     this.id = res.data.data.id;
                   }
             })
+            
     },
   }
 }

@@ -172,6 +172,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+body{
+  background: url(../../assets/images/log-in.png) repeat-x; 
+  background-size: 100%;
+  background-repeat: repeat-y;
+}
 
 </style>

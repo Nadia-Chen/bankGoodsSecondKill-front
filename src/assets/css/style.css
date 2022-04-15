@@ -73,6 +73,7 @@ select,input,textarea,button,.form-control{box-shadow:none;outline:0!important;}
 
 html,body{
     height: 100%;
+    width: 100%;
     position: relative;
     z-index: 2;
 }
@@ -113,9 +114,9 @@ html,body{
     padding: 0;
 }
 /*single-sign*/
-.single-sign{
+/* .single-sign{
     
-}
+} */
 .single-sign .sign-bg {
     background: url('../images/log-in.png')no-repeat;
     background-size: cover;
@@ -178,6 +179,8 @@ html,body{
     font-family: "CircularStd-Book";
     text-transform:initial;
     padding: 0 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .signin-form .form-col{
     width: 48.5%;
@@ -339,6 +342,10 @@ html,body{
 /*modal-header*/
 
 /*.signin.popup-in*/
+/* body{
+    background: url(../images/log-in.png) no-repeat;
+    background-size: 100%; 
+} */
 .signin.popup-in {padding: 146px 0;}
 .signin.signup.popup-up {padding: 48px 0;}
 .signin.popup-in,.signin.signup.popup-up{
@@ -376,6 +383,8 @@ html,body{
 
 .sign-content.popup-in-content .btn.signin_btn,.sign-content.popup-in-content  .btn.signin_btn:focus {
     width: 500px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .sign-content.popup-in-content .centered {
     width: auto;
