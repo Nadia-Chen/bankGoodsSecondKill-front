@@ -1,5 +1,4 @@
-# banksystem_frontend
-competition used
+# 银行秒杀系统前端
 
 管理员操作界面在main分支
 用户操作界面在master分支
